@@ -1,0 +1,59 @@
+<input type="checkbox" hidden id="minicart" />
+<section class="minicart animation--scale">
+  <h3 class="minicart__heading">
+    Giỏ hàng
+    <label for="minicart" class="minicart__close"
+      ><i class="fal fa-times"></i
+    ></label>
+  </h3>
+  <div *ngIf="products.length == 0; then nullData; else hasData"></div>
+  <ng-template #nullData>
+    <span class="minicart__null">Giỏ hàng trống</span>
+  </ng-template>
+  <ng-template #hasData>
+    <ul class="minicart__list">
+      <li
+        class="minicart__item animation--lefttoright"
+        id="productcart{{ product.id }}"
+        *ngFor="let product of products"
+      >
+        <div
+          class="minicart__item__img"
+          [ngStyle]="{
+            'background-image':
+              'url(../../../assets/images/products/' +
+              product.id +
+              '/' +
+              product.image +
+              ')'
+          }"
+        ></div>
+        <div class="minicart__item__info">
+          <a
+            [routerLink]="['/details', product?.id]"
+            class="minicart__item__link"
+            (click)="disableMiniCart()"
+          >
+            {{ product.name }}
+          </a>
+          <div class="minicart__item__group">
+            <span class="minicart__item__price">Giá: {{ product.price }}</span>
+            <span class="minicart__item__quantity">
+              Số lượng: x{{ product.quantity }}
+            </span>
+          </div>
+        </div>
+        <button
+          class="minicart__item__btn"
+          (click)="handleRemoveProduct(product.id)"
+        >
+          <i class="far fa-trash-alt"></i>
+        </button>
+      </li>
+    </ul>
+    <div class="minicart__group">
+      <button class="minicart__btn">Xem giỏ</button>
+      <button class="minicart__btn">Thanh toán</button>
+    </div>
+  </ng-template>
+</section>

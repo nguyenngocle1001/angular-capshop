@@ -1,0 +1,17 @@
+<section class="product">
+  <div
+    class="product__image"
+    [ngStyle]="{
+      'background-image': 'url(' + getImage() + ')'
+    }"
+  ></div>
+  <p class="product__brand">{{ product?.brand }}</p>
+  <a [routerLink]="['/details', product?.id]" class="product__name">
+    {{ product?.name }}
+  </a>
+  <p class="product__price">{{ product?.price | number }}</p>
+  <div class="product__rating" [innerHTML]="rating()"></div>
+  <button class="product__addcart" (click)="handleAddToCart()">
+    thêm vào giỏ
+  </button>
+</section>

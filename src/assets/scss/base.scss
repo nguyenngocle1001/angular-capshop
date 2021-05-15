@@ -1,0 +1,95 @@
+.group {
+  width: 100%;
+  margin: 20px 0 0 0;
+  padding: 0;
+
+  &__name {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid $primary-color;
+    color: $primary-color;
+    margin: 0 5px;
+    padding: 0;
+    background: $white-1-color;
+    padding: 10px;
+  }
+}
+
+.breadcrumb {
+  background: transparent;
+  margin: 0;
+  padding: 10px 0;
+  &__list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    font-size: 14px;
+    &::after {
+      content: "/";
+      margin: 0 5px;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__item.active {
+    color: $gray-1-color;
+  }
+
+  &__link {
+    color: $black-1-color;
+    font-size: inherit;
+    transition: all linear 0.25s;
+    &:hover {
+      color: $primary-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+.animation--scale {
+  animation: scale linear 0.25s;
+}
+
+.animation--lefttoright {
+  animation: lefttoright linear 0.25s;
+}
+
+.animation--leftRemove {
+  animation: leftRemove linear 0.5s;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes lefttoright {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes leftRemove {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

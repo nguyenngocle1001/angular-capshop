@@ -1,0 +1,34 @@
+<input type="checkbox" id="nav" hidden />
+<label for="nav" class="modal"></label>
+<nav class="nav">
+  <label for="nav" class="close"><i class="fal fa-times"></i></label>
+  <ul class="nav__list">
+    <li class="nav__item tablet">
+      <h3 class="nav__heading">TÁC VỤ</h3>
+    </li>
+    <li class="nav__item mobile">
+      <a [routerLink]="['/login']" class="nav__link" (click)="navClick()"
+        ><i class="fas fa-user"></i><br />Tài khoản</a
+      >
+    </li>
+    <li class="nav__item">
+      <a [routerLink]="['/']" class="nav__link" (click)="navClick()"
+        >Trang chủ</a
+      >
+    </li>
+    <li class="nav__item">
+      <a [routerLink]="['/products']" class="nav__link" (click)="navClick()"
+        >Sản phẩm</a
+      >
+    </li>
+    <li class="nav__item">
+      <a href="" class="nav__link" (click)="navClick()">Giới thiệu</a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="nav__link" (click)="navClick()">Liên hệ</a>
+    </li>
+    <li class="nav__item">
+      <a href="" class="nav__link" (click)="navClick()">Bài viết</a>
+    </li>
+  </ul>
+</nav>

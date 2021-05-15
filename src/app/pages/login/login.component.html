@@ -1,0 +1,120 @@
+<div class="container">
+  <section class="breadcrumb">
+    <ul class="breadcrumb__list">
+      <li class="breadcrumb__item">
+        <a [routerLink]="['/home']" class="breadcrumb__link">Trang chủ</a>
+      </li>
+      <li class="breadcrumb__item active">Tài khoản</li>
+    </ul>
+  </section>
+  <div class="login animation--scale">
+    <div class="row">
+      <div class="col-lg-8 col-md-6">
+        <div class="login__image"></div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="login__center">
+          <div class="login__group">
+            <h3 class="login__name">Hi!</h3>
+            <div
+              *ngIf="isLoginForm; then active__login; else active__register"
+            ></div>
+            <ng-template #active__login>
+              <form>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="login__input"
+                    placeholder="Email"
+                  />
+                  <small id="emailHelp" class="form-text text-muted">
+                    Email sẽ được giữ bí mật
+                  </small>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="login__input"
+                    placeholder="Mật khẩu"
+                  />
+                </div>
+                <div class="form-group form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="exampleCheck1"
+                  />
+                  <label class="form-check-label" for="exampleCheck1"
+                    >Lưu tài khoản</label
+                  >
+                </div>
+                <button type="submit" class="login__button">Đăng nhập</button>
+              </form>
+            </ng-template>
+            <ng-template #active__register>
+              <form>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="login__input"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="login__input"
+                    placeholder="Mật khẩu"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="login__input"
+                    placeholder="Họ tên của bạn"
+                  />
+                </div>
+                <div class="form-group">
+                  <input type="datetime-local" class="login__input" />
+                </div>
+                <button type="submit" class="login__button">Đăng ký</button>
+              </form></ng-template
+            >
+
+            <div class="login__saparate">
+              <hr class="login__saparate__line" />
+              <span class="login__saparate__body">hoặc</span>
+              <hr class="login__saparate__line" />
+            </div>
+            <div class="login__social">
+              <a href="" class="login__social__btn">
+                <i class="fab fa-facebook-f"></i>
+                Facebook
+              </a>
+              <a href="" class="login__social__btn gmail">
+                <i class="fab fa-google"></i>
+                Google
+              </a>
+            </div>
+            <div class="login__change">
+              Bạn đã có tài khoản?
+              <div
+                *ngIf="isLoginForm; then changeRegister; else changeLogin"
+              ></div>
+              <ng-template #changeRegister>
+                <label class="login__change__btn" (click)="changeForm()">
+                  Đăng ký
+                </label>
+              </ng-template>
+              <ng-template #changeLogin>
+                <label class="login__change__btn" (click)="changeForm()">
+                  Đăng nhập
+                </label>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

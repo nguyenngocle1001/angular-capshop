@@ -1,0 +1,98 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/responsive";
+* {
+  margin: 0;
+  padding: 0;
+}
+.product {
+  background: $white-1-color;
+  margin: 1px 5px 10px;
+  box-shadow: 0px 2px 2px $shadow-1-color;
+  animation: product linear 0.25s;
+  &:hover &__image {
+    background-size: 110%;
+    @include mobile {
+      background-size: contain;
+    }
+  }
+  &__image {
+    padding-top: 200px;
+    background: center no-repeat;
+    background-size: contain;
+  }
+  &__brand {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    color: $black-1-color;
+    padding: 0 10px;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  &__name {
+    color: $black-1-color;
+    text-align: center;
+    display: -webkit-box;
+    padding: 2px 10px;
+    text-transform: capitalize;
+    font-size: 14px;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    transition: all linear 0.25s;
+    text-decoration: none;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__price {
+    text-align: center;
+    color: $primary-color;
+    font-size: 18px;
+    font-weight: 500;
+    &::before {
+      content: "₫";
+      font-size: 13px;
+    }
+  }
+
+  &__rating {
+    text-align: center;
+    padding: 5px 10px;
+    color: $yellow-1-color;
+    font-size: 12px;
+  }
+
+  &__addcart {
+    display: block;
+    width: 100%;
+    background-color: $primary-color;
+    padding: 10px 0;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $white-1-color;
+    letter-spacing: 2px;
+    transition: all linear 0.25s;
+
+    &:hover {
+      @include mobile {
+        color: $white-1-color;
+        background-color: $primary-color;
+      }
+      color: $primary-color;
+      background-color: $black-1-color;
+    }
+  }
+}
+
+@keyframes product {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}

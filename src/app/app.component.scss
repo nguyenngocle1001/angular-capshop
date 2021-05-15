@@ -1,0 +1,43 @@
+@import "../assets/scss/variables";
+.saparate__header {
+  padding-top: 100px;
+}
+.alert {
+  display: none;
+  position: fixed;
+  text-align: center;
+  color: $white-1-color;
+  top: 99%;
+  left: 1%;
+  transform: translateY(-100%);
+  z-index: 1000;
+  background-color: #21b531;
+}
+
+.alert.active {
+  display: block;
+  // animation: show linear 1s;
+  // top: 20%;
+}
+
+.alert.hide {
+  animation: hide linear 1s;
+}
+
+@keyframes show {
+  from {
+    top: -10%;
+  }
+  to {
+    top: 20%;
+  }
+}
+
+@keyframes hide {
+  from {
+    top: 20%;
+  }
+  to {
+    top: -10%;
+  }
+}

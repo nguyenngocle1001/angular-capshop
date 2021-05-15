@@ -1,0 +1,89 @@
+<div class="container">
+  <section class="breadcrumb">
+    <ul class="breadcrumb__list">
+      <li class="breadcrumb__item">
+        <a [routerLink]="['/home']" class="breadcrumb__link">Trang chủ</a>
+      </li>
+      <li class="breadcrumb__item">
+        <a [routerLink]="['/products']" class="breadcrumb__link">Sản phẩm</a>
+      </li>
+      <li class="breadcrumb__item active">{{ product.name }}</li>
+    </ul>
+  </section>
+  <div class="details animation--scale">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="details__image">
+          <div
+            *ngFor="let image of images"
+            class="details__image__main"
+            [ngClass]="{ active: image == activeURL }"
+            [ngStyle]="{ backgroundImage: 'url(' + image + ')' }"
+          ></div>
+          <div class="details__image__thumnails">
+            <div
+              class="details__image__thumnails__item"
+              *ngFor="let image of images"
+              [ngClass]="{ active: image == activeURL }"
+              [ngStyle]="{ backgroundImage: 'url(' + image + ')' }"
+              (click)="changeActive(image)"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="details__info">
+          <h3 class="details__info__name">{{ product.name }}</h3>
+          <p class="details__info__id">Mã sản phẩm: LEX{{ product.id }}</p>
+          <p class="details__info__brand">{{ product.brand }}</p>
+          <p class="details__info__price">{{ product.price | number }}</p>
+          <div class="details__info__group">
+            <h4 class="details__info__group__name">Kích thước</h4>
+            <select name="" id="" class="details__info__size">
+              <option value="" class="details__info__size__item">Nhỏ</option>
+              <option value="" class="details__info__size__item">Vừa</option>
+              <option value="" class="details__info__size__item">Lớn</option>
+            </select>
+          </div>
+          <div class="details__info__group">
+            <h4 class="details__info__group__name">Số lượng</h4>
+            <input
+              class="details__info__input"
+              type="number"
+              value="{{ quantity }}"
+              (change)="inputChange()"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');"
+              [(ngModel)]="quantity"
+              min="1"
+              max="999"
+            />
+          </div>
+          <div class="details__info__group flex">
+            <button class="details__info__addcart" (click)="handleAddToCart()">
+              thêm vào giỏ
+            </button>
+            <button
+              class="details__info__favourite"
+              (click)="changeFavourite()"
+            >
+              <div *ngIf="isFavourite; then favourite; else unfavourite"></div>
+              <ng-template #favourite>
+                <i class="fas fa-heart" style="color: red"></i>
+              </ng-template>
+              <ng-template #unfavourite>
+                <i class="fal fa-heart" style="color: red"></i>
+              </ng-template>
+            </button>
+          </div>
+          <button class="details__info__buy">Mua ngay</button>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="details__description">
+          <h3 class="details__description__name">Mô tả chi tiết</h3>
+          <p class="details__description__null">Chưa có thông tin</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

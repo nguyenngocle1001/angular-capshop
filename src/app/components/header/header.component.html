@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="header__top">miễn phí giao hàng toàn quốc</div>
+  <div class="container">
+    <div class="header__content">
+      <div class="header__logo">
+        <a [routerLink]="['/']" class="header__logo__content">LexeShop</a>
+      </div>
+      <div class="header__action">
+        <div class="header__action__item">
+          <a class="header__cart header__action__link">
+            <label
+              for="minicart"
+              style="padding: 0; margin: 0; cursor: pointer"
+            >
+              <i class="header__action__icon fal fa-shopping-cart"></i>
+              <div class="header__cart__quantity">
+                {{ cartSize }}
+              </div>
+            </label>
+          </a>
+          <app-minicart></app-minicart>
+        </div>
+        <div class="header__action__item tablet">
+          <a [routerLink]="['/login']" class="header__action__link">
+            <i class="header__action__icon fal fa-user"></i>
+          </a>
+        </div>
+        <div class="header__action__item">
+          <label for="nav" class="header__action__link">
+            <i class="header__action__icon fal fa-bars"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

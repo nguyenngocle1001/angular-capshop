@@ -1,0 +1,23 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/base";
+@import "../../../assets/scss/responsive";
+.home__button {
+  background-color: transparent;
+  border: double 2px $primary-color;
+  color: $black-1-color;
+  padding: 5px 20px;
+  text-align: center;
+  width: fit-content;
+  border-radius: 2px;
+  display: block;
+  margin: 0 auto;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: all linear 0.25s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  &:hover {
+    background-color: $black-1-color;
+    color: $primary-color;
+  }
+}

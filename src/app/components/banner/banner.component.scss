@@ -1,0 +1,55 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/base.scss";
+.banner {
+  margin-top: 2px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+
+  &__block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__image {
+    width: 100%;
+  }
+  &__slogan {
+    text-transform: uppercase;
+    color: $white-1-color;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center;
+  }
+
+  &__small {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $white-1-color;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  &__link {
+    color: $white-1-color;
+    border: 1px solid $white-1-color;
+    padding: 5px 0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    transition: all linear 0.25s;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+    &:hover {
+      background: $primary-color;
+    }
+  }
+}
+
+@import "../../../assets/scss/responsive.scss";

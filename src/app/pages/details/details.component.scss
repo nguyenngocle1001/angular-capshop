@@ -1,0 +1,186 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/base";
+@import "../../../assets/scss/responsive.scss";
+.details {
+  background-color: $white-1-color;
+  border-radius: 2px;
+  &__image {
+    &__main {
+      width: 100%;
+      padding-top: 400px;
+      background: no-repeat center;
+      background-size: contain;
+      background-color: $white-1-color;
+      display: none;
+    }
+    &__main.active {
+      display: block;
+      animation: image linear 0.5s;
+    }
+
+    &__thumnails {
+      display: flex;
+      width: 100%;
+      &__item {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        background: no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+      }
+
+      &__item.active {
+        border: 1px solid $gray-1-color;
+      }
+    }
+  }
+
+  &__info {
+    color: $black-2-color;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    @include mobile {
+      padding: 10px;
+      border-top: 1px solid $primary-color;
+      margin-top: 20px;
+    }
+    &__name {
+      text-transform: capitalize;
+      font-size: 25px;
+      font-weight: 450;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    &__id {
+      font-size: 14px;
+    }
+    &__brand {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 16px;
+    }
+    &__price {
+      font-size: 20px;
+      margin: 0;
+      &::before {
+        content: "₫";
+        font-size: 14px;
+        margin-right: 2px;
+      }
+    }
+
+    &__group {
+      margin-top: 20px;
+      &__name {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    &__group.flex {
+      display: flex;
+      align-items: center;
+    }
+
+    &__size {
+      width: 50%;
+      outline: none;
+      border: 1px solid $gray-1-color;
+      padding: 5px 10px;
+      border-radius: 2px;
+      font-size: 14px;
+      color: inherit;
+    }
+    &__input {
+      width: 80px;
+      padding: 5px;
+      font-size: 14px;
+      outline: none;
+      border: 1px solid $gray-1-color;
+      border-radius: 2px;
+    }
+    &__addcart {
+      background: transparent;
+      height: 40px;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $black-2-color;
+      letter-spacing: 2px;
+      flex: 2;
+      transition: all linear 0.25s;
+      border: 1px solid $black-1-color;
+      border-radius: 2px;
+
+      &:hover {
+        color: $primary-color;
+        border-color: $primary-color;
+      }
+    }
+
+    &__favourite {
+      background: transparent;
+      margin-left: 10px;
+      transition: all linear 0.25s;
+      border: 1px solid $black-1-color;
+      border-radius: 2px;
+      height: 40px;
+      padding: 0 10px;
+    }
+    &__buy {
+      height: 40px;
+      margin-top: 20px;
+      background: $primary-color;
+      color: $white-1-color;
+      border: none;
+      outline: none;
+      border-radius: 2px;
+      box-shadow: 0 1px 1px $shadow-1-color;
+      transition: all linear 0.25s;
+      &:hover {
+        filter: brightness(90%);
+      }
+    }
+  }
+
+  &__description {
+    border-top: 1px solid $gray-1-color;
+    &__name {
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px;
+      border-bottom: 1px solid $primary-color;
+      width: fit-content;
+      margin: 0 auto;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        border-width: 4px;
+        border-color: $primary-color;
+        border-style: solid;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+    &__null {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@keyframes image {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}

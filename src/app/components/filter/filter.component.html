@@ -1,0 +1,46 @@
+<div class="filter">
+  <h3 class="filter__heading"><i class="fal fa-filter"></i> Tìm kiếm</h3>
+  <section class="filter__group">
+    <h4 class="filter__name">Thương hiệu</h4>
+    <ul class="filter__list">
+      <li class="filter__item" *ngFor="let brand of brands">
+        <input
+          type="checkbox"
+          class="filter__checkbox"
+          name="brand.name"
+          value="brand.name"
+          id="{{ brand.name }}"
+        />
+        <label for="{{ brand.name }}" class="filter__label">
+          {{ brand.name }}</label
+        >
+      </li>
+    </ul>
+  </section>
+  <section class="filter__group">
+    <h4 class="filter__name">Danh mục</h4>
+    <ul class="filter__list">
+      <li class="filter__item" *ngFor="let category of categorys">
+        <input
+          type="checkbox"
+          class="filter__checkbox"
+          name="category.name"
+          value="category.name"
+          id="{{ category.name }}"
+        />
+        <label for="{{ category.name }}" class="filter__label">
+          {{ category.name }}</label
+        >
+      </li>
+    </ul>
+  </section>
+  <section class="filter__group">
+    <h4 class="filter__name">Giá tiền</h4>
+    <div class="filter__price">
+      <input type="text" class="filter__price__input" placeholder="từ" />
+      -
+      <input type="text" class="filter__price__input" placeholder="đến" />
+    </div>
+    <button class="filter__button">Áp dụng</button>
+  </section>
+</div>

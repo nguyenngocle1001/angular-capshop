@@ -1,0 +1,12 @@
+<app-banner></app-banner>
+<div class="container pl-0 pr-0">
+  <section class="group animation--scale">
+    <h3 class="group__name">sản phẩm giới hạn</h3>
+    <div class="row no-gutters">
+      <div class="col-lg-3" *ngFor="let product of limitedProduct">
+        <app-product [product]="product"></app-product>
+      </div>
+    </div>
+  </section>
+  <a [routerLink]="['/products']" class="home__button">Xem tất cả</a>
+</div>

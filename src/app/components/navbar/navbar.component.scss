@@ -1,0 +1,75 @@
+@import "../../../assets/scss/variables";
+#nav:checked ~ .nav {
+  left: 0;
+}
+
+#nav:checked ~ .modal {
+  display: block;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($color: #000000, $alpha: 0.5);
+  color: #fff;
+  z-index: 4;
+}
+
+.close {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  color: $black-1-color;
+  z-index: 3;
+  display: block;
+  cursor: pointer;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  left: 200%;
+  right: 0;
+  bottom: 0;
+  transition: all linear 0.25s;
+  overflow: hidden;
+  z-index: 5;
+
+  background: $white-1-color;
+  color: $black-1-color;
+
+  &__heading {
+    margin-bottom: 20px;
+    color: $primary-color;
+    letter-spacing: 5px;
+  }
+
+  &__list {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    overflow-y: auto;
+  }
+  &__link {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all linear 0.25s;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+@import "../../../assets/scss/responsive.scss";

@@ -1,0 +1,107 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/responsive";
+
+.sort {
+  background: $gray-4-color;
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  @include mobile {
+    padding: 10px 0;
+  }
+  &__name {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: inherit;
+    margin-right: 20px;
+    @include mobile {
+      display: none;
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  &__item {
+    position: relative;
+    background: $white-1-color;
+    margin: 0 10px;
+    color: $black-1-color;
+    padding: 5px 20px;
+    border-radius: 2px;
+    text-transform: capitalize;
+    cursor: pointer;
+    box-shadow: 0 1px 1px $shadow-1-color;
+    @include mobile {
+      margin: 0 2px;
+      padding: 5px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      transform: translateY(50%);
+    }
+
+    &--block {
+      width: 200px;
+      cursor: default;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include mobile {
+        flex: 1;
+      }
+    }
+  }
+
+  &__item.active {
+    background: $primary-color;
+    color: $white-1-color;
+    cursor: default;
+  }
+  &__item:hover &__select {
+    height: 200%;
+  }
+  &__icon {
+    font-size: 18px;
+    transition: all linear 0.25s;
+  }
+  &__item:hover &__icon {
+    transform: rotate(180deg);
+  }
+  &__select {
+    position: absolute;
+    background: $white-1-color;
+    top: 110%;
+    left: 0;
+    right: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0 1px 1px $shadow-1-color;
+    z-index: 1;
+    transition: all linear 0.25s;
+    border-radius: 2px;
+
+    &__item {
+      list-style: none;
+      padding: 5px 20px;
+      transition: all linear 0.25s;
+      cursor: pointer;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

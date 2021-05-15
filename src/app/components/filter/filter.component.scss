@@ -1,0 +1,73 @@
+@import "../../../assets/scss/variables";
+
+.filter {
+  padding: 10px;
+  border-radius: 2px;
+  margin-right: 5px;
+  height: 100%;
+  &__heading {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  &__group {
+    margin-top: 20px;
+    border-bottom: 1px solid $black-1-color;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__name {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 15px 0;
+    font-size: 15px;
+  }
+
+  &__price {
+    width: 100%;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-between;
+    &__input {
+      width: 40%;
+      border: 1px solid $primary-color;
+      outline: none;
+      border-radius: 2px;
+      padding: 5px 2px;
+      text-align: center;
+    }
+  }
+  &__button {
+    width: 100%;
+    background: $primary-color;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    margin: 10px 0;
+    color: $white-1-color;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px $shadow-1-color;
+    transition: all linear 0.25s;
+    &:hover {
+      background: $black-1-color;
+    }
+  }
+  &__label {
+    font-size: 14px;
+    margin: 0 0 0 5px;
+    padding: 0;
+    text-transform: capitalize;
+  }
+}

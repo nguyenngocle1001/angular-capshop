@@ -1,0 +1,84 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/responsive.scss";
+.footer {
+  background: $black-1-color;
+  margin-top: 50px;
+  &__body {
+    padding: 30px 0;
+  }
+
+  &__link {
+    display: block;
+    text-transform: capitalize;
+    color: $white-1-color;
+    font-size: 14px;
+    padding: 5px 0;
+    text-decoration: none;
+    transition: all linear 0.25s;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &__bottom {
+    padding: 10px 0;
+    color: $white-1-color;
+    background: $black-2-color;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+.subcribe {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__input {
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $white-1-color;
+    color: $white-1-color;
+    transition: all linear 0.25s;
+    padding: 5px 10px;
+    &:focus {
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+
+  &__btn {
+    margin-left: 10px;
+    background: $white-1-color;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 2px;
+    color: $black-1-color;
+    transition: all linear 0.25s;
+
+    &:hover {
+      background: $primary-color;
+      color: $white-1-color;
+    }
+  }
+}
+
+.follow {
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  &__link {
+    color: $white-1-color;
+    display: block;
+    padding: 5px;
+    transition: all linear 0.25s;
+    margin: 0 5px;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

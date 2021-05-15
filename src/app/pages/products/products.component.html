@@ -1,0 +1,29 @@
+<div class="container">
+  <section class="breadcrumb">
+    <ul class="breadcrumb__list">
+      <li class="breadcrumb__item">
+        <a [routerLink]="['/home']" class="breadcrumb__link">Trang chủ</a>
+      </li>
+      <li class="breadcrumb__item active">Sản phẩm</li>
+    </ul>
+  </section>
+  <div class="row no-gutters">
+    <div class="col-lg-2 col-md-12 tablet">
+      <app-filter></app-filter>
+    </div>
+    <div class="col-lg-10 col-md-12">
+      <app-sort></app-sort>
+      <section class="group">
+        <h3 class="group__name">tất cả sản phẩm</h3>
+        <div class="row no-gutters">
+          <div
+            class="col-lg-3 col-md-4 col-sm-6 col-xm-12"
+            *ngFor="let product of products"
+          >
+            <app-product [product]="product"></app-product>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
